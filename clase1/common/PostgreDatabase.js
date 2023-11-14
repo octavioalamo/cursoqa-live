@@ -12,7 +12,8 @@ class PostgreDatabase {
         databaseClient.connect().catch(err => {console.log(err)})
         await databaseClient.query(query)
             .then(response => {
-                result = response.rows
+                result = response.rows[0]
+                console.log('Query')
                 databaseClient.end()
             })
             .catch(err => {
