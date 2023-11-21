@@ -1,7 +1,8 @@
 class homePage{
     elements ={
         signUpLink: () => cy.get('#sign_up'),
-        signInLink: () => cy.get('#sign_in')
+        signInLink: () => cy.get('#sign_in'),
+        perfumesLink: () => cy.get('#perfumes')
     }
 
     gotoSignUp(){
@@ -10,6 +11,10 @@ class homePage{
 
     gotoSignIn(){
         this.elements.signInLink().click()
+    }
+
+    gotoPerfumes(){
+        this.elements.perfumesLink().click()
     }
 }
 

@@ -1,0 +1,80 @@
+[
+    {
+        "filters": {
+            "brand" : {
+                "Burberry": true,
+                "Bvlgari": false,
+                "Calvin Klein": false,
+                "Carolina Herrera": false,
+                "Chanel": false,
+                "Creed": false,
+                "Dior": false,
+                "Dolce&Gabbana": false,
+                "Giorgio Armani": false,
+                "Gucci": false,
+                "Hermes": false,
+                "Hugo Boss": false,
+                "Jean Paul Gaultier": false,
+                "Lancome": false,
+                "Paco Rabanne": false,
+                "Prada": false,
+                "Tom Ford": false,
+                "Versace": false
+            },
+            "gender": {
+                "male": false,
+                "female": false
+            },
+            "price": {
+                "any": false,
+                "15-25": false,
+                "25-40": false,
+                "40-90": false,
+                "90-+175": false
+            }
+        },
+        "result" :{
+            "count": 6
+        }
+        
+    },
+    {
+        "filters": {
+            "brand" : {
+                "Burberry": false,
+                "Bvlgari": false,
+                "Calvin Klein": false,
+                "Carolina Herrera": false,
+                "Chanel": false,
+                "Creed": false,
+                "Dior": false,
+                "Dolce&Gabbana": false,
+                "Giorgio Armani": false,
+                "Gucci": false,
+                "Hermes": false,
+                "Hugo Boss": false,
+                "Jean Paul Gaultier": false,
+                "Lancome": false,
+                "Paco Rabanne": false,
+                "Prada": false,
+                "Tom Ford": false,
+                "Versace": false
+            },
+            "gender": {
+                "male": true,
+                "female": false
+            },
+            "price": {
+                "any": false,
+                "15-25": true,
+                "25-40": false,
+                "40-90": false,
+                "90-+175": false
+            }
+        },
+        "result" :{
+            "count": 5
+        }
+        
+    }
+]

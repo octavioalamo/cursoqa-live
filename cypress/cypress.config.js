@@ -1,10 +1,29 @@
 const { defineConfig } = require("cypress");
+/**** cucumber */
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const {
+  addCucumberPreprocessorPlugin,
+} = require("@badeball/cypress-cucumber-preprocessor");
+const {
+  createEsbuildPlugin,
+} = require("@badeball/cypress-cucumber-preprocessor/esbuild");
+/******/
 const { Client } = require('pg')
 require('dotenv').config()
 
 module.exports = defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
+    specPattern: "**/*.feature",
+    async setupNodeEvents(on, config) {
+      /** cucumber */
+      await addCucumberPreprocessorPlugin(on, config);
+      on(
+        "file:preprocessor",
+        createBundler({
+          plugins: [createEsbuildPlugin(config)],
+        })
+      );
+      /*****/
       on("task", {
         async connectDB(query){
           const client = new Client({
@@ -21,10 +40,18 @@ module.exports = defineConfig({
           return res.rows;
         }
       })
+
+      return config;
     },
     baseUrl: process.env.FRONTEND_URL,
     env : {
       BACKEND_URL : process.env.BACKEND_URL
     }
   },
+  reporter: 'mochawesome',
+  reporterOptions: {
+    overwrite: false,
+    html: true,
+    json: true,
+  }
 });
