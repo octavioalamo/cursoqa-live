@@ -1,4 +1,3 @@
-```gherkin
 Feature: Busqueda
     Background:
         * def endpointURL = '/perfumes/search'

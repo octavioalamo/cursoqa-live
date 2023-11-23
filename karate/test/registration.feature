@@ -8,7 +8,7 @@ Feature: Registro de usuarios
                 }
             """
 
-    Scenario: Registro exitoso
+    Scenario: Registro exitoso  
         Given url apiURL
         And path endpointURL
         And header Content-Type = 'application/json'
